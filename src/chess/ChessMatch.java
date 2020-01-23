@@ -27,11 +27,15 @@ public class ChessMatch {
 		}
 		return mat;
 	}
+	private void placeNewPiece(char column, int row, ChessPiece piece) {
+		
+		board.placePeice(piece, new ChessPosition(column, row).toPositio());
+	}
 	
 	private void incialSetup() {
-		board.placePeice(new Rook(board, Color.WHITE), new Position(2,1));
-		board.placePeice(new King(board, Color.BLACK), new Position(0,4));
-		board.placePeice(new King(board, Color.WHITE), new Position(7,4));
+		placeNewPiece('b',6,new Rook(board, Color.WHITE));
+		placeNewPiece('e',8,new King(board, Color.BLACK));
+		placeNewPiece('e',1,new King(board, Color.WHITE));
 	}
 	
 }
